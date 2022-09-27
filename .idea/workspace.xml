@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/risf/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/risf/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/risf/risf.deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/risf/risf.service.yml" afterDir="false" />
+    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="RISF deployment and external service DONE">
+      <change afterPath="$PROJECT_DIR$/itsf/itsf.deployment.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/itsf/itsf.persistent-volume-claim.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/itsf/itsf.persistent-volume.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/itsf/itsf.service.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/itsf/volume/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -43,7 +44,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664291257991</updated>
-      <workItem from="1664291259541" duration="1345000" />
+      <workItem from="1664291259541" duration="4283000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1664291376856</created>
@@ -52,7 +53,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664291376856</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="RISF deployment and external service DONE">
+      <created>1664292649045</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664292649045</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,6 +79,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="RISF deployment and external service DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="RISF deployment and external service DONE" />
   </component>
 </project>

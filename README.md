@@ -30,8 +30,17 @@ Lorsque l'on visitera les deux sites web depuis le navigateur internet, le warni
 
 ## Réalisation
 
-1. Appliquer le déploiement du Nginx RISF
+1. Créer le déploiement du Nginx RISF
 `kubectl apply -f ./risf/risf.deployment.yml`
-2. Appliquer le service pour Nginx RISF
+2. Créer le service pour Nginx RISF
 `kubectl apply -f ./risf/risf.service.yml`
 3. On peut maintenant se rendre sur la page `http://localhost:8082`
+4. Créer le volume persistant
+`kubectl apply -f ./itsf/itsf.persistent-volume.yml`
+5. Créer le claim
+`kubectl apply -f ./itsf/itsf.persistent-volume-claim.yml`
+6. Créer le déploiement du Nginx ITSF
+`kubectl apply -f ./itsf/itsf.deployment.yml`
+7. Créer le service pour Nginx ITSF
+`kubectl apply -f ./itsf/itsf.service.yml`
+8. On peut maintenant se rendre sur la page `http://localhost:8083`
