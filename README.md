@@ -27,3 +27,11 @@ Exposition des pages web avec Ingress :
     trafic en HTTPS jusqu'à Ingress, puis en HTTP jusqu'aux micro service nginx.
 
 Lorsque l'on visitera les deux sites web depuis le navigateur internet, le warning de sécurité ne devra pas apparaître
+
+## Réalisation
+
+1. Appliquer le déploiement du Nginx RISF
+`kubectl apply -f ./risf/risf.deployment.yml`
+2. Appliquer le service pour Nginx RISF
+`kubectl apply -f ./risf/risf.service.yml`
+3. On peut maintenant se rendre sur la page `http://localhost:8082`
