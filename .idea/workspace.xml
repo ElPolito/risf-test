@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="RISF deployment and external service DONE">
-      <change afterPath="$PROJECT_DIR$/itsf/itsf.deployment.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/itsf/itsf.persistent-volume-claim.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/itsf/itsf.persistent-volume.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/itsf/itsf.service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/itsf/volume/index.html" afterDir="false" />
+    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="ITSF deployment and external service DONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risf/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/risf/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risf/risf.deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/risf/risf.deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risf/risf.service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/risf/risf.service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,15 +24,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TF_FMT": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TF_FMT&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,7 +41,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664291257991</updated>
-      <workItem from="1664291259541" duration="4283000" />
+      <workItem from="1664291259541" duration="8147000" />
+      <workItem from="1664333371154" duration="795000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1664291376856</created>
@@ -60,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664292649045</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ITSF deployment and external service DONE">
+      <created>1664303016737</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664303016737</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -80,6 +85,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="RISF deployment and external service DONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="RISF deployment and external service DONE" />
+    <MESSAGE value="ITSF deployment and external service DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="ITSF deployment and external service DONE" />
   </component>
 </project>

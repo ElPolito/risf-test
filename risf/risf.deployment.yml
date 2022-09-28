@@ -16,6 +16,15 @@ spec:
     spec:
       containers:
         - name: nginx-risf
-          image: elpolo/risf-nginx
+          image: elpolo/risf-nginx:2-noroot
+          imagePullPolicy: Always
+          securityContext:
+            runAsUser: 101
+            runAsGroup: 101
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - all
           ports:
-            - containerPort: 80
+            - containerPort: 8080
