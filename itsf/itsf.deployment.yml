@@ -20,9 +20,17 @@ spec:
             claimName: itsf-persistent-volume-claim
       containers:
         - name: nginx-itsf
-          image: nginx:1.23-alpine
+          image: nginxinc/nginx-unprivileged:1.23-alpine
+          securityContext:
+            runAsUser: 101
+            runAsGroup: 101
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true
+            capabilities:
+              drop:
+                - all
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           volumeMounts:
             - mountPath: "/usr/share/nginx/html"
               name: itsf-persistent-volume
