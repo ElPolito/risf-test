@@ -1,0 +1,4 @@
+ssl/**/*.pem
+ssl/**/*.srl
+ssl/**/*.csr
+**/*.secret.yml

@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: nginx-risf
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 8082
       targetPort: 8080
-      nodePort: 30001

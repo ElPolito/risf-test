@@ -28,19 +28,60 @@ Exposition des pages web avec Ingress :
 
 Lorsque l'on visitera les deux sites web depuis le navigateur internet, le warning de sécurité ne devra pas apparaître
 
-## Réalisation
+## SSL
 
-1. Créer le déploiement du Nginx RISF
-`kubectl apply -f ./risf/risf.deployment.yml`
-2. Créer le service pour Nginx RISF
-`kubectl apply -f ./risf/risf.service.yml`
-3. On peut maintenant se rendre sur la page `http://localhost:8082`
-4. Créer le volume persistant
-`kubectl apply -f ./itsf/itsf.persistent-volume.yml`
-5. Créer le claim
-`kubectl apply -f ./itsf/itsf.persistent-volume-claim.yml`
-6. Créer le déploiement du Nginx ITSF
-`kubectl apply -f ./itsf/itsf.deployment.yml`
-7. Créer le service pour Nginx ITSF
-`kubectl apply -f ./itsf/itsf.service.yml`
-8. On peut maintenant se rendre sur la page `http://localhost:8083`
+Génération des certificats SSL d'après cette [page d'IBM](https://www.ibm.com/docs/en/runbook-automation?topic=certificate-generate-rba-server)
+
+1. Génération de la clé privée pour le CA root (dans le dossier **ssl/rootca**)
+    `openssl genrsa -out rootCAKey.pem 2048`
+2. Génération du certificat pour le CA root (même dossier)
+    `openssl req -x509 -sha256 -new -nodes -key rootCAKey.pem -days 3650 -out rootCACert.pem`
+3. Ajout du certificat du CA root sur le navigateur
+4. Génération de la clé privée pour RISF (dans le dossier **ssl/rba/risf**)
+    `openssl genrsa -out rbaServerKey.pem 2048`
+5. Génération du CSR pour RISF (même dossier)
+    `openssl req -new -key rbaServerKey.pem -sha256 -out rbaServerCert.csr -config rbaServerCertReq.config`
+6. Génération de la clé privée en base 64 (même dossier)
+    `openssl base64 -in rbaServerKey.pem`
+7. Ajout de la clé privée en base 64 dans le fichier **risf/risf.secret.yml** comme valeur pour la clé **tls.key** (enlever les sauts de ligne)
+8. Copie du fichier **ssl/rba/risf/rbaServerCert.csr** dans le dossier **ssl/rootca/certs/risf** 
+9. Génération du certificat pour RISF (dans le dossier **ssl/rootca/certs/risf**)
+    `openssl x509 -req -sha256 -in rbaServerCert.csr -CA ../rootCACert.pem -CAkey ../rootCAKey.pem -CAcreateserial -out rbaServerCert.pem -days 365 -extfile v3.ext`
+10. Génération du certificat en base 64 (même dossier)
+    `openssl base64 -in rbaServerCert.pem`
+11. Ajout du certificat en base 64 dans le fichier **risf/risf.secret.yml** comme valeur pour la clé **tls.crt** (enlever les sauts de ligne)
+12. Refaire les mêmes étapes en modifiant les dossiers et les fichiers pour ITSF en commençant à l'étape 4
+
+
+## Lancement
+
+### RISF
+
+1. Appliquer le secret
+   `kubectl apply -f ./risf/risf.secret.yml`
+2. Créer le déploiement
+   `kubectl apply -f ./risf/risf.deployment.yml`
+3. Créer le service
+   `kubectl apply -f ./risf/risf.service.yml`
+
+### ITSF
+
+1. Appliquer le secret
+    `kubectl apply -f ./itsf/itsf.secret.yml`
+2. Créer le volume persistant
+    `kubectl apply -f ./itsf/itsf.persistent-volume.yml`
+3. Créer le claim du volume
+    `kubectl apply -f ./itsf/itsf.persistent-volume-claim.yml`
+4. Créer le déploiement
+   `kubectl apply -f ./itsf/itsf.deployment.yml`
+5. Créer le service
+   `kubectl apply -f ./itsf/itsf.service.yml`
+
+### Ingress
+
+Pour déployer l'Ingress il faut avoir un ingress controller. Si ce n'est pas le cas, il est possible de le déployer avec cette commande :
+
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/cloud/deploy.yaml`
+
+1. Déployer l'Ingress
+    `kubectl apply -f ./ingress.yml`

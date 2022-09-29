@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="RISF is no root">
+    <list default="true" id="964d0fbc-335c-4e82-a0db-4800bdb7ba54" name="Changes" comment="ITSF is no root">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/itsf/itsf.deployment.yml" beforeDir="false" afterPath="$PROJECT_DIR$/itsf/itsf.deployment.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/itsf/itsf.service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/itsf/itsf.service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/risf/risf.service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/risf/risf.service.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: nginx-itsf
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 8083
       targetPort: 8080
-      nodePort: 30002
